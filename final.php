@@ -12,8 +12,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST"){
 // معلومات الإتصال بقاعدة البيانات
 $conn = new mysqli("localhost","root","","test");
 //check
-if (!$conn->_connect_error){
-    die('Connection failed: ' $conn->connect_error);
+if ($conn->connect_error){
+    die('Connection failed: '.$conn->connect_error);
  }
  else{  echo "Connection to mysqli: " ;}
 
@@ -28,21 +28,34 @@ if (!$conn->_connect_error){
      if(isset($_POST['Save']))
 {
  echo"<br>";
-$my_query="";
-$my_query="select*from name motors";
-$result= mysqli_query($conn,$conn_query);
-$my_query ="INSERT INTO name (motor1,motor2,motor3,motor4,motor5,motor6) VALUES ('?','?','?','?','?','?')";
-$result= mysqli_query($conn,$conn_query);
+////-------------------------- (m -> M) تغيير
+//         echo "we are here" ;
+//$my_query ="INSERT INTO name (Motor1,Motor2,Motor3,Motor4,Motor5,Motor6) VALUES (".$slider1.",".$slider2.",".$slider3.",".$slider4.",".$slider5.",".$slider6.")";
+//$result = $conn -> query($my_query) ;
+//echo $result ;
+//}
+//if($result)
+//
+//{
+//echo"done !";
+//}
+//else
+//{
+// echo"error";
 }
-if($result)
+// this is my code
+    //-------------------------- (m -> M) تغيير
+    $my_query ="INSERT INTO name (Motor1,Motor2,Motor3,Motor4,Motor5,Motor6) VALUES (".$slider1.",".$slider2.",".$slider3.",".$slider4.",".$slider5.",".$slider6.")";
 
-{
-echo"done !";
-}
-else
-{
- echo"error";
-}
+
+    if ($conn->query($my_query) === TRUE) {
+        echo " record Updated successfully";
+    } else {
+        echo "Error: " . $my_query . "<br>" . $conn->error;
     }
+
+    $conn->close();
+
+// here my code ends
 }
 ?>
