@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            .slidecontainer {
+  width: 100%; /* Width of the outside container */
+}
+
+/* The slider itself */
+.slider {
+  -webkit-appearance: none;  /* Override default CSS styles */
+  appearance: none;
+  width: 100%; /* Full-width */
+  height: 15px; /* Specified height */
+  background: #d3d3d3; 
+  outline: none; /* Remove outline */
+  opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+  -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+  transition: opacity .2s;
+}
+
+/* Mouse-over effects */
+.slider:hover {
+  opacity: 1; 
+}
+
+/* The slider handle  */
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none; /* Override default look */
+  appearance: none;
+  width: 15px; /* Set a specific slider handle width */
+  height: 15px; /* Slider handle height */
+  background: #3208ca; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+.slider::-moz-range-thumb {
+  width: 25px; /* Set a specific slider handle width */
+  height: 10px; /* Slider handle height */
+  background: #04ec97; /* Green background */
+  cursor: pointer; /* Cursor on hover */
+}
+
+        </style>
+    </head>
+    <body>
+<form action="final2.php" method="POST">
+<table>
+            <tr>
+                <th> محرك 1</th> <th><div class="slidecontainer">
+                <input type="range" min="1" max="180" value="50" class="slider" id="myRange1" name ="slider1">
+                <th><p>Value: <span id="demo1"></span></p></div> </th>>
+                
+                <script>
+                    var slider1 = document.getElementById("myRange1");
+                    var output1 = document.getElementById("demo1");
+                    output1.innerHTML = slider1.value;
+                    
+                    slider1.oninput = function() {
+                      output1.innerHTML = this.value;
+                    }
+                    </script>
+                    
+             </tr>
+             <tr>
+                <th> محرك 2</th> <th><div class="slidecontainer">
+                    <input type="range" min="1" max="180" value="50" class="slider" id="myRange2" name ="slider2">
+                    <th><p>Value: <span id="demo2"></span></p></div> </th>>
+                    <script>
+                        var slider2 = document.getElementById("myRange2");
+                        var output2 = document.getElementById("demo2");
+                        output2.innerHTML = slider2.value;
+                        
+                        slider2.oninput = function() {
+                          output2.innerHTML = this.value;
+                        }
+                        </script>
+             </tr>
+
+             <tr>
+                <th> محرك 3</th> <th><div class="slidecontainer">
+                    <input type="range" min="1" max="180" value="50" class="slider" id="myRange3" name ="slider3">
+                    <th><p>Value: <span id="demo3"></span></p></div> </th>>
+                    <script>
+                        var slider3 = document.getElementById("myRange3");
+                        var output3 = document.getElementById("demo3");
+                        output3.innerHTML = slider3.value;
+                        
+                        slider3.oninput = function() {
+                          output3.innerHTML = this.value;
+                        }
+                        </script>
+            </tr>
+            <tr>
+                <th> محرك 4</th> <th><div class="slidecontainer">
+                    <input type="range" min="1" max="180" value="50" class="slider" id="myRange4" name ="slider4">
+                    <th><p>Value: <span id="demo4"></span></p></div> </th>>
+                    <script>
+                        var slider4 = document.getElementById("myRange4");
+                        var output4 = document.getElementById("demo4");
+                        output4.innerHTML = slider4.value;
+                        
+                        slider4.oninput = function() {
+                          output4.innerHTML = this.value;
+                        }
+                        </script>
+            </tr>
+            <tr>
+                <th> محرك5</th> <th><div class="slidecontainer">
+                    <input type="range" min="1" max="180" value="50" class="slider" id="myRange5"name ="slider5">
+                    <th><p>Value: <span id="demo5"></span></p></div> </th>>
+                    <script>
+                        var slider5 = document.getElementById("myRange5");
+                        var output5 = document.getElementById("demo5");
+                        output5.innerHTML = slider5.value;
+                        
+                        slider5.oninput = function() {
+                          output5.innerHTML = this.value;
+                        }
+                        </script>
+            </tr>
+            <tr>
+                <th> محرك 6</th> <th><div class="slidecontainer">
+                    <input type="range" min="1" max="180" value="50" class="slider" id="myRange6" name ="slider6">
+                    <th><p>Value: <span id="demo6"></span></p></div> </th>>
+                    <script>
+                        var slider6 = document.getElementById("myRange6");
+                        var output6 = document.getElementById("demo6");
+                        output6.innerHTML = slider5.value;
+                        
+                        slider6.oninput = function() {
+                          output6.innerHTML = this.value;
+                        }
+                        </script>
+            </tr>
+        </table>
+        <button type ="submit" value=" submit " name="save"> save   </button>
+
+
+        
+    </form>
+   <br>
+    <button type ="submit" value=" run " > تشغيل</button >
+
+ </body>
+</html>
